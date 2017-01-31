@@ -18,13 +18,13 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $film= $this->getDoctrine()->getRepository('CinemaCinemaBundle:Film')->findAll();
+        $films= $this->getDoctrine()->getRepository('CinemaCinemaBundle:Film')->findAll();
 
         $titre_page= 'Liste des films ';
 
         return $this->render(
             'CinemaCinemaBundle:Cinema:film.html.twig',
-            ['film'=>$film]
+            ['films'=>$films]
         );
     }
 

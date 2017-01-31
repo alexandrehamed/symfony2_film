@@ -5,12 +5,12 @@
 <ul>
     {% for film in films %}
         <li>
-            <h2>{{ Film.Titre }}</h2>
-            <span>{{ Film.Auteurs }}</span>
+            <h2>{{ film.Titre }}</h2>
+            <span>{{ film.Auteurs }}</span>
             <br>
-            <p>{{ Film.Resume }}</p>
+            <p>{{ film.Resume }}</p>
             <br>
-            <p>{{ Film.Sortie }}</p>
+            <p>{{ film.Sortie }}</p>
 
         </li>
     {% endfor %}
