@@ -1,0 +1,8 @@
+cinema_cinema:
+    resource: "@CinemaCinemaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
