@@ -1,3 +1,18 @@
 {% extends 'CinemaCinemaBundle::layout.html.twig' %}
+    {% block body %}
 
 
+<ul>
+    {% for film in films %}
+        <li>
+            <h2>{{ Film.Titre }}</h2>
+            <span>{{ Film.Auteurs }}</span>
+            <br>
+            <p>{{ Film.Resume }}</p>
+            <br>
+            <p>{{ Film.Sortie }}</p>
+
+        </li>
+    {% endfor %}
+</ul>
+    {% endblock %}
