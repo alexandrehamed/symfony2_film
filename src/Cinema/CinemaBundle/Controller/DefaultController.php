@@ -13,10 +13,19 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class DefaultController extends Controller
 {
+
+    /**
+     * @Route("/home", name="page_accueil")
+     */
+    public function indexAction()
+    {
+        return $this->render('CinemaCinemaBundle::layout.html.twig');
+    }
+
     /**
      * @Route("/liste")
      */
-    public function indexAction()
+    public function showAction()
     {
         $films= $this->getDoctrine()->getRepository('CinemaCinemaBundle:Film')->findAll();
 

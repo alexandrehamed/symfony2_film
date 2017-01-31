@@ -12,8 +12,7 @@
     <title>Accueil - Devschool</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
     <!-- Custom CSS -->
     <link href="css/shop-item.css" rel="stylesheet">
 
@@ -39,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Cinema</a>
+            <a class="navbar-brand" href="index.html">Devschool</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -63,13 +62,15 @@
 <!-- Page Content -->
 <div class="container">
 
-    <div class="row">
-
-        <div class="col-md-12">
+    <div class="row" style="margin-top: 100px;">
+        <div class="col-md-2">
+            <button class="btn btn-lg btn-success"><a href="http://127.0.0.1:8000/film/liste">Films</a></button>
+        </div>
+        <div class="col-md-10">
             <h1>Accueil</h1>
             <p>Bienvenue sur le site Symfony de Devschool</p>
-            {% block body %}{% endblock %}
 
+            {% block body %}    {% endblock %}
         </div>
 
     </div>
