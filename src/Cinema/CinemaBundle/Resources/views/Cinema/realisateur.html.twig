@@ -1,0 +1,33 @@
+{% extends 'CinemaCinemaBundle::layout.html.twig' %}
+    {% block body %}
+
+
+
+
+
+<h2>Liste des réalisateurs</h2>
+
+<br />
+
+<div class="well">
+    <div class="row">
+        <div class="col-md-12">
+            {% for personne in realisateurs %}
+
+                <strong>{{ personne.Realisateur }} {{ personne.Nom }}</strong> age<br />
+            <br />
+
+            <div class="text-right">
+                <a href="#" class="btn btn-success">Voir ses films</a>
+            </div>
+                <hr />
+                <br>
+                <br>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+    {% endblock %}

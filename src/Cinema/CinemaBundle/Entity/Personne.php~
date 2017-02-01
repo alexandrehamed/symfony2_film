@@ -36,9 +36,9 @@ class Personne
     private $nom;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="date", type="date", length=255)
+     * @ORM\Column(name="date", type="datetime")
      */
     private $date;
 
@@ -125,31 +125,8 @@ class Personne
         return $this->date;
     }
     /**
-     * @ORM\ManyToOne(targetEntity="Film", inversedBy="Personne")
+     * @ORM\ManyToOne(targetEntity="film", inversedBy="personne")
      */
     private $film;
-
-    /**
-     * Set Film
-     *
-     * @param \Cinema\CinemaBundle\Entity\Film $film
-     *
-     * @return Personne
-     */
-    public function setFilm(\Cinema\CinemaBundle\Entity\Film $film = null)
-    {
-        $this->film = $film;
-
-        return $this;
-    }
-
-    /**
-     * Get filmCase mismatch between loaded and declared class names: Case mismatch between loaded and declared class names:
-     *
-     * @return \Cinema\CinemaBundle\Entity\Film
-     */
-    public function getFilm()
-    {
-        return $this->film;
-    }
 }
+

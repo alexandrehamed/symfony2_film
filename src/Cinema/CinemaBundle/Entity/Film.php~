@@ -157,32 +157,9 @@ class Film
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="Film")
+     * @ORM\ManyToOne(targetEntity="personne", inversedBy="film")
      */
     private $personne;
 
-
-    /**
-     * Set personne
-     *
-     * @param \Cinema\CinemaBundle\Entity\Personne $personne
-     *
-     * @return Film
-     */
-    public function setPersonne(\Cinema\CinemaBundle\Entity\Personne $personne = null)
-    {
-        $this->personne = $personne;
-
-        return $this;
-    }
-
-    /**
-     * Get personne
-     *
-     * @return \Cinema\CinemaBundle\Entity\Personne
-     */
-    public function getPersonne()
-    {
-        return $this->personne;
-    }
 }
+

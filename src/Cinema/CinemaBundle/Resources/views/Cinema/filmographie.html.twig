@@ -1,0 +1,10 @@
+{% extends 'CinemaCinemaBundle::layout.html.twig' %}
+
+{% block title %}{{ livre.titre }}{% endblock %}
+{% block body %}
+    <h1>{{ Film.titre }}</h1>
+    <span>Ecrit pas {{ livre.auteur }}</span>
+    <p>{{ livre.description }}</p>
+    <span>Nombre de pages :livre.nombrePages</span>
+    <p><a href="{{ path('page_livres') }}">Retour</a></p>
+{% endblock %}

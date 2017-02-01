@@ -25,7 +25,7 @@ class DefaultController extends Controller
     /**
      * @Route("/liste")
      */
-    public function showAction()
+    public function filmliste()
     {
         $films= $this->getDoctrine()->getRepository('CinemaCinemaBundle:Film')->findAll();
 
@@ -34,6 +34,18 @@ class DefaultController extends Controller
         return $this->render(
             'CinemaCinemaBundle:Cinema:film.html.twig',
             ['films'=>$films]
+        );
+    }
+    /**
+     * @Route("/realisateurs")
+     */
+    public function realisateliste(){
+
+
+        $realisateurs = $this->getDoctrine()->getRepository('CinemaCinemaBundle:Personne')->findAll();
+        return $this->render(
+            'CinemaCinemaBundle:Cinema:realisateur.html.twig',
+            ['realisateurs' => $realisateurs]
         );
     }
 
