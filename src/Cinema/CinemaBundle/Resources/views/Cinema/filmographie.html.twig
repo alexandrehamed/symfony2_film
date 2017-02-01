@@ -1,10 +1,26 @@
 {% extends 'CinemaCinemaBundle::layout.html.twig' %}
 
-{% block title %}{{ livre.titre }}{% endblock %}
 {% block body %}
-    <h1>{{ Film.titre }}</h1>
-    <span>Ecrit pas {{ livre.auteur }}</span>
-    <p>{{ livre.description }}</p>
-    <span>Nombre de pages :livre.nombrePages</span>
-    <p><a href="{{ path('page_livres') }}">Retour</a></p>
+
+    <br />
+    <br><br><br>
+
+{% for film in films %}
+    <div class="thumbnail">
+        <div class="caption-full">
+            <h4 class="pull-right"></h4>
+
+
+            <h4>{{ film.Titre}}</h4>
+            <p>{{ film.Resume }}</p>
+        </div>
+        <div class="ratings">
+            <p class="pull-right">sorti le  {{ film.Sortie|date('d/m/Y') }}</p>
+            <p>Réalisé par{{ film.Auteurs}}</p>
+        </div>
+
+
+    </div> {% endfor %}
+    <button class="btn btn-success"><a href="{{ path('page_realisateur') }}">Retour</a></button>
+
 {% endblock %}

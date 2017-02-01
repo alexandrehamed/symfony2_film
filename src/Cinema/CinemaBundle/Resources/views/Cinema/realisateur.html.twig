@@ -9,23 +9,30 @@
 
 <br />
 
-<div class="well">
+
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3">
+            <p class="lead">Cinéma</p>
+            <div class="list-group">
+                <a href="{{ path('page_liste') }}" class="list-group-item active">Films</a>
+                <a href="{{ path('page_realisateur') }}" class="list-group-item">Réalisateurs</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="well">
             {% for personne in realisateurs %}
 
                 <strong>{{ personne.Realisateur }} {{ personne.Nom }}</strong> age<br />
             <br />
 
             <div class="text-right">
-                <a href="#" class="btn btn-success">Voir ses films</a>
+                <h2><a href="{{ path('page_film', {'id': personne.id}) }}"><p>voir ses films</p> </a> </h2>
             </div>
                 <hr />
                 <br>
                 <br>
 
             {% endfor %}
-
         </div>
     </div>
 </div>

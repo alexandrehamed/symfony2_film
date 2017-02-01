@@ -23,7 +23,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/liste")
+     * @Route("/liste", name="page_liste")
      */
     public function filmliste()
     {
@@ -37,7 +37,7 @@ class DefaultController extends Controller
         );
     }
     /**
-     * @Route("/realisateurs")
+     * @Route("/realisateurs", name="page_realisateur")
      */
     public function realisateliste(){
 
@@ -48,6 +48,18 @@ class DefaultController extends Controller
             ['realisateurs' => $realisateurs]
         );
     }
+    /**
+     * @Route("/realisateur/{id}", requirements={"id": "\d+"}, name="page_film")
+     */
+    public function showAction($id){
 
+
+        $films = $this->getDoctrine()->getRepository('CinemaCinemaBundle:Film')->findByPersonne($id);
+        return $this->render(
+            'CinemaCinemaBundle:Cinema:filmographie.html.twig',
+
+            ['films' => $films]
+        );
+    }
 
 }
