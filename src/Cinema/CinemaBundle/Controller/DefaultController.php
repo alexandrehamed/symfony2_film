@@ -28,8 +28,9 @@ class DefaultController extends Controller
     public function filmliste()
     {
         $films= $this->getDoctrine()->getRepository('CinemaCinemaBundle:Film')->findAll();
-
         $titre_page= 'Liste des films ';
+
+
 
         return $this->render(
             'CinemaCinemaBundle:Cinema:film.html.twig',
@@ -62,4 +63,18 @@ class DefaultController extends Controller
         );
     }
 
+
+    /**
+     * @Route("/categorie/{id}", requirements={"id": "\d+"}, name="page_categorie")
+     */
+    public function categorie($id){
+
+
+        $films = $this->getDoctrine()->getRepository('CinemaCinemaBundle:Film')->findByPersonne($id);
+        return $this->render(
+            'CinemaCinemaBundle:Cinema:filmographie.html.twig',
+
+            ['films' => $films]
+        );
+    }
 }

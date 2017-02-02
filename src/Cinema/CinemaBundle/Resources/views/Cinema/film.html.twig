@@ -13,6 +13,7 @@
             <div class="list-group">
                 <a href="{{ path('page_liste') }}" class="list-group-item active">Films</a>
                 <a href="{{ path('page_realisateur') }}" class="list-group-item">Réalisateurs</a>
+
             </div>
         </div>
 
@@ -25,7 +26,7 @@
 
             <div class="thumbnail">
                 <div class="caption-full">
-                    <h4 class="pull-right">Science-Fiction</h4>
+                    <h4 class="pull-right"></h4>
                     <h4>{{ film.Titre }}</h4>
                     <p>{{ film.Resume }}</p>
                 </div>
@@ -33,6 +34,10 @@
                     <p class="pull-right">        {{ film.Sortie|date('d/m/Y') }}</p>
                     <p>Réalisé par : {{ film.Auteurs }}</p>
                 </div>
+                <br>
+                <a href="{{ path('admin_film_modif', {'id': film.id}) }}"><p>modifier</p></a>
+                <a href="{{ path('admin_film_supprimer', {'id': film.id}) }}">supprimer</a>
+
             </div>
             {% endfor %}
 

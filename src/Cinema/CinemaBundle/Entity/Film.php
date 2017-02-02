@@ -185,4 +185,33 @@ class Film
     {
         return $this->personne;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Genre", inversedBy="Film")
+     */
+    private $genre;
+
+    /**
+     * Set genre
+     *
+     * @param \Cinema\CinemaBundle\Entity\Genre $genre
+     *
+     * @return Film
+     */
+    public function setGenre(\Cinema\CinemaBundle\Entity\Genre $genre = null)
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    /**
+     * Get genre
+     *
+     * @return \Cinema\CinemaBundle\Entity\Genre
+     */
+    public function getGenre()
+    {
+        return $this->genre;
+    }
 }
