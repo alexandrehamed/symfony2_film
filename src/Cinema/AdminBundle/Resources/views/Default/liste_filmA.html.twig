@@ -1,0 +1,27 @@
+{% extends 'CinemaAdminBundle::layout.html.twig' %}
+    {% block body %}
+
+        <div class="container">
+            <div class="row">
+                {% for film in films %}
+                    <div class="col-md-12 text-center jumbotron">
+
+                        <h4>{{ film.Titre }}</h4>
+                        <p>{{ film.Resume }}</p>                        <br>
+                        <p>catégorie :{{ film.genre }}</p> <br>
+                        <p class="pull-right">        {{ film.Sortie|date('d/m/Y') }}</p>
+                        <p>Réalisé par : {{ film.personne }}</p>
+                        <br>
+                        <br>
+                        <a href="{{ path('admin_film_modif', {'id': film.id}) }}"><p>modifier</p></a>
+                        <a href="{{ path('admin_film_supprimer', {'id': film.id}) }}">supprimer</a>
+
+                    </div>
+                    <hr>{% endfor %}
+            </div>
+        </div>
+    {% endblock %}
+
+
+
+

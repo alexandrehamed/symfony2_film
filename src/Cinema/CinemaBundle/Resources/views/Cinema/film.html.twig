@@ -32,11 +32,12 @@
                 </div>
                 <div class="ratings">
                     <p class="pull-right">        {{ film.Sortie|date('d/m/Y') }}</p>
-                    <p>Réalisé par : {{ film.Auteurs }}</p>
+                    <p>Réalisé par : {{ film.personne }} </p>
+                    <br>
+                    <p>Genre : {{ film.genre }}</p>
                 </div>
                 <br>
-                <a href="{{ path('admin_film_modif', {'id': film.id}) }}"><p>modifier</p></a>
-                <a href="{{ path('admin_film_supprimer', {'id': film.id}) }}">supprimer</a>
+
 
             </div>
             {% endfor %}

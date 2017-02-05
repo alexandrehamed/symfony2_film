@@ -124,32 +124,55 @@ class Personne
     {
         return $this->date;
     }
-    /**
-     * @ORM\ManyToOne(targetEntity="Film", inversedBy="Personne")
-     */
-    private $film;
+
+
 
     /**
-     * Set Film
+     * @ORM\OneToMany(targetEntity="Film", mappedBy="Personne")
+     */
+    private $film;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->film = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add film
      *
      * @param \Cinema\CinemaBundle\Entity\Film $film
      *
      * @return Personne
      */
-    public function setFilm(\Cinema\CinemaBundle\Entity\Film $film = null)
+    public function addFilm(\Cinema\CinemaBundle\Entity\Film $film)
     {
-        $this->film = $film;
+        $this->film[] = $film;
 
         return $this;
     }
 
     /**
-     * Get filmCase mismatch between loaded and declared class names: Case mismatch between loaded and declared class names:
+     * Remove film
      *
-     * @return \Cinema\CinemaBundle\Entity\Film
+     * @param \Cinema\CinemaBundle\Entity\Film $film
+     */
+    public function removeFilm(\Cinema\CinemaBundle\Entity\Film $film)
+    {
+        $this->film->removeElement($film);
+    }
+
+    /**
+     * Get film
+     *
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getFilm()
     {
         return $this->film;
     }
-}
+
+    public function __toString() {
+        return $this->nom;
+    }}

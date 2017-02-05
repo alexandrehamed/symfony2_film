@@ -62,9 +62,9 @@ class Genre
     {
         return $this->style;
     }
-    /**
-     * @ORM\ManyToOne(targetEntity="Film", inversedBy="Genre")
+
+    /**inversedBy
+     * @ORM\OneToMany(targetEntity="Film", mappedBy="Genre")
      */
     private $film;
 }
-

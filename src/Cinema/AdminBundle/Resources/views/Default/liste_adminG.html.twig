@@ -1,0 +1,21 @@
+{% extends 'CinemaAdminBundle::layout.html.twig' %}
+    {% block body %}
+
+        <div class="container">
+            <div class="row">
+                {% for genre in genres %}
+                    <div class="col-md-12 text-center jumbotron">
+
+                        <h2>{{ genre.Style }}</h2>
+                        <a href="{{ path('admin_genre_modif', {'id': genre.id}) }}"><p>modifier</p></a>
+                        <a href="{{ path('admin_genre_supprimer', {'id': genre.id}) }}">supprimer</a>
+
+                    </div>
+                    <hr>{% endfor %}
+            </div>
+        </div>
+    {% endblock %}
+
+
+
+

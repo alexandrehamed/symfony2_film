@@ -156,35 +156,6 @@ class Film
         return $this->sortie;
     }
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="Film")
-     */
-    private $personne;
-
-
-    /**
-     * Set personne
-     *
-     * @param \Cinema\CinemaBundle\Entity\Personne $personne
-     *
-     * @return Film
-     */
-    public function setPersonne(\Cinema\CinemaBundle\Entity\Personne $personne = null)
-    {
-        $this->personne = $personne;
-
-        return $this;
-    }
-
-    /**
-     * Get personne
-     *
-     * @return \Cinema\CinemaBundle\Entity\Personne
-     */
-    public function getPersonne()
-    {
-        return $this->personne;
-    }
 
     /**
      * @ORM\ManyToOne(targetEntity="Genre", inversedBy="Film")
@@ -213,5 +184,36 @@ class Film
     public function getGenre()
     {
         return $this->genre;
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="Film")
+     */
+    private $personne;
+
+    /**
+     * Set personne
+     *
+     * @param \Cinema\CinemaBundle\Entity\Personne $personne
+     *
+     * @return Film
+     */
+    public function setPersonne(\Cinema\CinemaBundle\Entity\Personne $personne = null)
+    {
+        $this->personne = $personne;
+
+        return $this;
+    }
+
+    /**
+     * Get personne
+     *
+     * @return \Cinema\CinemaBundle\Entity\Personne
+     */
+    public function getPersonne()
+    {
+        return $this->personne;
+
+
     }
 }
